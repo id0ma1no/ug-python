@@ -1,2 +1,2 @@
 # brdocs
-Userguide of some apps or toz
+Userguide of some apps or toz;
