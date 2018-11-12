@@ -112,26 +112,8 @@ def install_magics():
             ip.set_next_input(result)
 
         @cell_magic
-        def disabled(self, line, cell):
-            pass
-
-        @cell_magic
         def language(self, line, cell):
             pass
-
-        @line_magic
-        def col(self, line):
-            """
-            %col number_of_column code
-            """
-            pos = line.find(" ")
-            n = int(line[:pos])
-            code = line[pos+1:]
-            result = pretty(sh.ev(code)).split("\n")
-            max_width = max(len(line) for line in result) + 3
-            result = [line.ljust(max_width) for line in result]
-            result = "\n".join(["".join(result[i:i+n]) for i in xrange(0, len(result), n)])
-            print result
 
         @line_magic
         def omit(self, line):
@@ -174,35 +156,6 @@ def install_magics():
                 print "\n".join(sh.display_formatter.formatters["text/plain"](result).split("\n")[:count])
                 print "..."
 
-        @line_magic("C")
-        def _C(self, line):
-            global results
-            from itertools import izip_longest
-            pos = line.find(" ")
-            try:
-                gap = int(line[:pos])
-                line = line[pos+1:]
-            except ValueError:
-                gap = 2
-
-            for idx, sec in enumerate(line.split(";;")):
-                if idx > 0:
-                    print
-                codes = [x.strip() for x in sec.split(";")]
-                results = [[code] for code in codes]
-                for i, code in enumerate(codes):
-                    results[i].extend(pretty(sh.ev(code)).split("\n"))
-
-                results = [list(row) for row in zip(*list(izip_longest(*results, fillvalue="")))]
-
-                for i, col in enumerate(results):
-                    width = max(len(row) for row in col)
-                    col.insert(1, "-"*width)
-                    col[0] = col[0].center(width)
-                    col[2:] = [row.ljust(width) for row in col[2:]]
-
-                for row in zip(*results):
-                    print (" "*gap).join(row)
 
         @line_magic
         def exec_python(self, line):
@@ -299,13 +252,7 @@ def install_magics():
                     del png.type_printers[key]
 
         @line_magic
-        def sympy_latex(self, line):
-            from sympy import latex
-            from IPython.display import Latex, display
-            ip = get_ipython()
-            latex = Latex("$${}$$".format(latex(ip.ev(line))))
-            display(latex)
-
+        
         @cell_magic
         def mlab_plot(self, line, cell):
             from mayavi import mlab
@@ -338,23 +285,7 @@ def install_magics():
             thread = threading.Thread(target=f, name="__magic_thread__" + line)
             thread.start()
 
-        @line_magic
-        def find(self, line):
-            from IPython.core.getipython import get_ipython
-            from fnmatch import fnmatch
-
-            items = line.split()
-            patterns, target = items[:-1], items[-1]
-            ipython = get_ipython()
-            names = dir(ipython.ev(target))
-
-            results = []
-            for pattern in patterns:
-                for name in names:
-                    if fnmatch(name, pattern):
-                        results.append(name)
-            return results
-
+        
         @magic_arguments()
         @argument('-l', '--lines', help='max lines', type=int, default=100)
         @argument('-c', '--chars', help='max chars', type=int, default=10000)
