@@ -1,0 +1,81 @@
+## 切换, toggle
+toggle header: Shift-H
+toggle menubar: Shift-E
+toggle toc: Shift-C
+toggle toolbar: Shift-T
+toggle zenmode: Shift-Z
+toggle codefolding: Shift-F
+toggle cell line numbers: L
+
+
+## 内核, kernel
+interrupt kernel: I,I
+confirm restart kernel: 0,0
+restart kernel and run all cells: 9,9
+
+## 单元执行, run cell
+run cell: Ctrl-Enter
+run cell and select next: Shift-Enter
+run cell and insert below: Alt-Enter
+run all cells: Shift-R
+run all cells above: Shift-A
+run all cells below: Shift-B
+
+## cell的删除和恢复
+delete cell: D,D
+undo cell deletion: Z 
+
+## 单元的选择,复制(剪切),粘贴
+select next cell: Down/J
+select previous cell: Up/K
+extend selection above: Shift-K/Shift-Up
+extend selection below: Shift-J/Shift-Down
+cut cell: X
+copy cell: C
+paste cell below: V
+paste cell above: Shift-V
+
+## 单元的插入,移动, 模式变换, 融合, 分割
+insert cell above: A
+insert cell below: B
+move cell up: Alt-Up
+move cell down: Alt-Down
+change cell to raw: R
+change cell to code: Y
+enter command mode: Ctrl-M
+change cell to markdown: M
+merge cells: Shift-M
+split cell at cursor: Ctrl-Shift-Minus
+
+## 标题大小
+change cell to heading 1: 1 
+change cell to heading 2: 2
+change cell to heading 3: 3
+change cell to heading 4: 4
+change cell to heading 5: 5
+change cell to heading 6: 6
+
+## cell的输出控制
+clear cell output: Ctrl-L
+clear all cells output: Shift-L
+toggle cell output collapsed(隐藏): O 
+toggle cell output scrolled(滚动): Shift-O
+
+## 关闭弹出页面, 信任, 保存, 替换
+close pager: Esc/Q
+trust notebook: Ctrl-1
+save notebook: Ctrl-S/S
+find and replace: Ctrl+H/F
+
+## 焦点变换
+scroll notebook down: Space
+scroll notebook up: Shift-Space
+scroll cell top: Ctrl-0
+scroll cell center: Ctrl-9
+
+## 其他
+show command palette: P 
+show keyboard shortcuts: H
+ignore: Shift
+increase code font size: Ctrl-Shift-9
+decrease code font size: Ctrl-Shift-1
