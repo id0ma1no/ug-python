@@ -1,0 +1,53 @@
+digraph{
+
+# Graph style
+"ordering"="out"
+"rankdir"="TD"
+
+#########
+# Nodes #
+#########
+
+"Add(Pow(Symbol(x), Integer(3)), Pow(Symbol(y), Integer(3)), Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2))), Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y)))_()" ["color"="black", "label"="Add", "shape"="ellipse"];
+"Pow(Symbol(x), Integer(3))_(0,)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol(x)_(0, 0)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Integer(3)_(0, 1)" ["color"="black", "label"="3", "shape"="ellipse"];
+"Pow(Symbol(y), Integer(3))_(1,)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol(y)_(1, 0)" ["color"="black", "label"="y", "shape"="ellipse"];
+"Integer(3)_(1, 1)" ["color"="black", "label"="3", "shape"="ellipse"];
+"Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2)))_(2,)" ["color"="black", "label"="Mul", "shape"="ellipse"];
+"Integer(3)_(2, 0)" ["color"="black", "label"="3", "shape"="ellipse"];
+"Symbol(x)_(2, 1)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Pow(Symbol(y), Integer(2))_(2, 2)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol(y)_(2, 2, 0)" ["color"="black", "label"="y", "shape"="ellipse"];
+"Integer(2)_(2, 2, 1)" ["color"="black", "label"="2", "shape"="ellipse"];
+"Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y))_(3,)" ["color"="black", "label"="Mul", "shape"="ellipse"];
+"Integer(3)_(3, 0)" ["color"="black", "label"="3", "shape"="ellipse"];
+"Symbol(y)_(3, 1)" ["color"="black", "label"="y", "shape"="ellipse"];
+"Pow(Symbol(x), Integer(2))_(3, 2)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol(x)_(3, 2, 0)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Integer(2)_(3, 2, 1)" ["color"="black", "label"="2", "shape"="ellipse"];
+
+#########
+# Edges #
+#########
+
+"Add(Pow(Symbol(x), Integer(3)), Pow(Symbol(y), Integer(3)), Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2))), Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y)))_()" -> "Pow(Symbol(x), Integer(3))_(0,)";
+"Add(Pow(Symbol(x), Integer(3)), Pow(Symbol(y), Integer(3)), Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2))), Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y)))_()" -> "Pow(Symbol(y), Integer(3))_(1,)";
+"Add(Pow(Symbol(x), Integer(3)), Pow(Symbol(y), Integer(3)), Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2))), Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y)))_()" -> "Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2)))_(2,)";
+"Add(Pow(Symbol(x), Integer(3)), Pow(Symbol(y), Integer(3)), Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2))), Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y)))_()" -> "Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y))_(3,)";
+"Pow(Symbol(x), Integer(3))_(0,)" -> "Symbol(x)_(0, 0)";
+"Pow(Symbol(x), Integer(3))_(0,)" -> "Integer(3)_(0, 1)";
+"Pow(Symbol(y), Integer(3))_(1,)" -> "Symbol(y)_(1, 0)";
+"Pow(Symbol(y), Integer(3))_(1,)" -> "Integer(3)_(1, 1)";
+"Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2)))_(2,)" -> "Integer(3)_(2, 0)";
+"Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2)))_(2,)" -> "Symbol(x)_(2, 1)";
+"Mul(Integer(3), Symbol(x), Pow(Symbol(y), Integer(2)))_(2,)" -> "Pow(Symbol(y), Integer(2))_(2, 2)";
+"Pow(Symbol(y), Integer(2))_(2, 2)" -> "Symbol(y)_(2, 2, 0)";
+"Pow(Symbol(y), Integer(2))_(2, 2)" -> "Integer(2)_(2, 2, 1)";
+"Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y))_(3,)" -> "Integer(3)_(3, 0)";
+"Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y))_(3,)" -> "Symbol(y)_(3, 1)";
+"Mul(Integer(3), Pow(Symbol(x), Integer(2)), Symbol(y))_(3,)" -> "Pow(Symbol(x), Integer(2))_(3, 2)";
+"Pow(Symbol(x), Integer(2))_(3, 2)" -> "Symbol(x)_(3, 2, 0)";
+"Pow(Symbol(x), Integer(2))_(3, 2)" -> "Integer(2)_(3, 2, 1)";
+}

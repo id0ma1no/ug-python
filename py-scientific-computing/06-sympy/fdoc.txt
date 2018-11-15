@@ -1,0 +1,2 @@
+adjoint: Conjugate transpose or Hermite conjugation.
+apart: Compute partial fraction decomposition of a rational function.

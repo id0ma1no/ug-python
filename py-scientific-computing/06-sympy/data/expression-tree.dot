@@ -1,0 +1,53 @@
+digraph{
+
+# Graph style
+"ordering"="out"
+"rankdir"="TD"
+
+#########
+# Nodes #
+#########
+
+"Mul(Symbol(x), Symbol(y), Pow(Add(Symbol(x), Symbol(y)), NegativeOne()), Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half()))_()" ["color"="black", "label"="Mul", "shape"="ellipse"];
+"Symbol(x)_(0,)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Symbol(y)_(1,)" ["color"="black", "label"="y", "shape"="ellipse"];
+"Pow(Add(Symbol(x), Symbol(y)), NegativeOne())_(2,)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Add(Symbol(x), Symbol(y))_(2, 0)" ["color"="black", "label"="Add", "shape"="ellipse"];
+"Symbol(x)_(2, 0, 0)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Symbol(y)_(2, 0, 1)" ["color"="black", "label"="y", "shape"="ellipse"];
+"NegativeOne()_(2, 1)" ["color"="black", "label"="-1", "shape"="ellipse"];
+"Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half())_(3,)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2))))_(3, 0)" ["color"="black", "label"="Add", "shape"="ellipse"];
+"Pow(Symbol(x), Integer(2))_(3, 0, 0)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol(x)_(3, 0, 0, 0)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Integer(2)_(3, 0, 0, 1)" ["color"="black", "label"="2", "shape"="ellipse"];
+"Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))_(3, 0, 1)" ["color"="black", "label"="Mul", "shape"="ellipse"];
+"NegativeOne()_(3, 0, 1, 0)" ["color"="black", "label"="-1", "shape"="ellipse"];
+"Pow(Symbol(y), Integer(2))_(3, 0, 1, 1)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol(y)_(3, 0, 1, 1, 0)" ["color"="black", "label"="y", "shape"="ellipse"];
+"Integer(2)_(3, 0, 1, 1, 1)" ["color"="black", "label"="2", "shape"="ellipse"];
+"Half()_(3, 1)" ["color"="black", "label"="1/2", "shape"="ellipse"];
+
+#########
+# Edges #
+#########
+
+"Mul(Symbol(x), Symbol(y), Pow(Add(Symbol(x), Symbol(y)), NegativeOne()), Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half()))_()" -> "Symbol(x)_(0,)";
+"Mul(Symbol(x), Symbol(y), Pow(Add(Symbol(x), Symbol(y)), NegativeOne()), Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half()))_()" -> "Symbol(y)_(1,)";
+"Mul(Symbol(x), Symbol(y), Pow(Add(Symbol(x), Symbol(y)), NegativeOne()), Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half()))_()" -> "Pow(Add(Symbol(x), Symbol(y)), NegativeOne())_(2,)";
+"Mul(Symbol(x), Symbol(y), Pow(Add(Symbol(x), Symbol(y)), NegativeOne()), Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half()))_()" -> "Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half())_(3,)";
+"Pow(Add(Symbol(x), Symbol(y)), NegativeOne())_(2,)" -> "Add(Symbol(x), Symbol(y))_(2, 0)";
+"Pow(Add(Symbol(x), Symbol(y)), NegativeOne())_(2,)" -> "NegativeOne()_(2, 1)";
+"Add(Symbol(x), Symbol(y))_(2, 0)" -> "Symbol(x)_(2, 0, 0)";
+"Add(Symbol(x), Symbol(y))_(2, 0)" -> "Symbol(y)_(2, 0, 1)";
+"Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half())_(3,)" -> "Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2))))_(3, 0)";
+"Pow(Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))), Half())_(3,)" -> "Half()_(3, 1)";
+"Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2))))_(3, 0)" -> "Pow(Symbol(x), Integer(2))_(3, 0, 0)";
+"Add(Pow(Symbol(x), Integer(2)), Mul(NegativeOne(), Pow(Symbol(y), Integer(2))))_(3, 0)" -> "Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))_(3, 0, 1)";
+"Pow(Symbol(x), Integer(2))_(3, 0, 0)" -> "Symbol(x)_(3, 0, 0, 0)";
+"Pow(Symbol(x), Integer(2))_(3, 0, 0)" -> "Integer(2)_(3, 0, 0, 1)";
+"Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))_(3, 0, 1)" -> "NegativeOne()_(3, 0, 1, 0)";
+"Mul(NegativeOne(), Pow(Symbol(y), Integer(2)))_(3, 0, 1)" -> "Pow(Symbol(y), Integer(2))_(3, 0, 1, 1)";
+"Pow(Symbol(y), Integer(2))_(3, 0, 1, 1)" -> "Symbol(y)_(3, 0, 1, 1, 0)";
+"Pow(Symbol(y), Integer(2))_(3, 0, 1, 1)" -> "Integer(2)_(3, 0, 1, 1, 1)";
+}
