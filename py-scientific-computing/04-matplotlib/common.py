@@ -130,7 +130,7 @@ class Graphviz(object):
                     self.link(obj, subobj, attr, isproperty(obj, attr))
 
     @classmethod
-    def graphviz(klass, obj):
+    def graphviz(klass, obj, filename="data/fig.dot"):
         self = klass()
         self.checked_ids = set()
         self.expanded = set()
@@ -142,8 +142,8 @@ edge [fontsize=10, penwidth=0.5];"""
         ]
         self._graphviz(obj)
         self.result.append("}")
-        print("\n".join(self.result), file=open("data/fig.dot", "w", encoding="utf-8"))
-        print("!data/fig.dot>")
+        print("\n".join(self.result), file=open(filename, "w", encoding="utf-8"))
+        print("!{}>".format(filename))
 
 
 class GraphvizDataFrame(Graphviz):

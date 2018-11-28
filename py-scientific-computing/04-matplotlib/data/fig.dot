@@ -2,19 +2,13 @@ digraph structs {
 rankdir="LR";        
 node [shape=record,style=filled];
 edge [fontsize=10, penwidth=0.5];
-obj_1536478133776[label="BboxTransformTo",fillcolor=white];
-obj_1536478133720[label="TransformedBbox",fillcolor=white];
-obj_1536478133608[label="Bbox",fillcolor=white];
-obj_1536477968384[label=<<table border="0"><tr><td>0</td><td>0</td></tr><tr><td>4</td><td>2</td></tr></table>>,fillcolor=white, fontsize=9];
-obj_1536478133608 -> obj_1536477968384[label="_points",style=solid];
-obj_1536478133720 -> obj_1536478133608[label="_bbox",style=solid];
-obj_1536478133664[label="Affine2D",fillcolor=white];
-obj_1536479360064[label=<<table border="0"><tr><td>72</td><td>0</td><td>0</td></tr><tr><td>0</td><td>72</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
-obj_1536478133664 -> obj_1536479360064[label="_mtx",style=solid];
-obj_1536478133720 -> obj_1536478133664[label="_transform",style=solid];
-obj_1536480186656[label=<<table border="0"><tr><td>0</td><td>0</td></tr><tr><td>288</td><td>144</td></tr></table>>,fillcolor=white, fontsize=9];
-obj_1536478133720 -> obj_1536480186656[label="_points",style=solid];
-obj_1536478133776 -> obj_1536478133720[label="_boxout",style=solid];
-obj_1536478852800[label=<<table border="0"><tr><td>288</td><td>0</td><td>0</td></tr><tr><td>0</td><td>144</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
-obj_1536478133776 -> obj_1536478852800[label="_mtx",style=solid];
+obj_3210794188248[label="TransformWrapper",fillcolor=white];
+obj_3210813192120[label="BlendedGenericTransform",fillcolor=white];
+obj_3210813192848[label="Log10Transform",fillcolor=white];
+obj_3210813192120 -> obj_3210813192848[label="_x",style=solid];
+obj_3210794188192[label="IdentityTransform",fillcolor=white];
+obj_3210707263616[label=<<table border="0"><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794188192 -> obj_3210707263616[label="_mtx",style=solid];
+obj_3210813192120 -> obj_3210794188192[label="_y",style=solid];
+obj_3210794188248 -> obj_3210813192120[label="_child",style=solid];
 }

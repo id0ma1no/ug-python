@@ -1,0 +1,28 @@
+digraph structs {
+rankdir="LR";        
+node [shape=record,style=filled];
+edge [fontsize=10, penwidth=0.5];
+obj_3210794188024[label="BboxTransformFrom",fillcolor=white];
+obj_3210811642224[label=<<table border="0"><tr><td>1</td><td>0</td><td>3</td></tr><tr><td>0</td><td>0.142857</td><td>0.285714</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794188024 -> obj_3210811642224[label="_mtx",style=solid];
+obj_3210794188080[label="TransformedBbox",fillcolor=white];
+obj_3210794187800[label="Bbox",fillcolor=white];
+obj_3210794183696[label=<<table border="0"><tr><td>-3</td><td>-2</td></tr><tr><td>-2</td><td>5</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794187800 -> obj_3210794183696[label="_points",style=solid];
+obj_3210794188080 -> obj_3210794187800[label="_bbox",style=solid];
+obj_3210794188248[label="TransformWrapper",fillcolor=white];
+obj_3210794146840[label="BlendedAffine2D",fillcolor=white];
+obj_3210707263616[label=<<table border="0"><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794146840 -> obj_3210707263616[label="_mtx",style=solid];
+obj_3210794145776[label="IdentityTransform",fillcolor=white];
+obj_3210794145776 -> obj_3210707263616[label="_mtx",style=solid];
+obj_3210794146840 -> obj_3210794145776[label="_x",style=solid];
+obj_3210794146392[label="IdentityTransform",fillcolor=white];
+obj_3210794146392 -> obj_3210707263616[label="_mtx",style=solid];
+obj_3210794146840 -> obj_3210794146392[label="_y",style=solid];
+obj_3210794188248 -> obj_3210794146840[label="_child",style=solid];
+obj_3210794188080 -> obj_3210794188248[label="_transform",style=solid];
+obj_3210811986448[label=<<table border="0"><tr><td>-3</td><td>-2</td></tr><tr><td>-2</td><td>5</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794188080 -> obj_3210811986448[label="_points",style=solid];
+obj_3210794188024 -> obj_3210794188080[label="_boxin",style=solid];
+}

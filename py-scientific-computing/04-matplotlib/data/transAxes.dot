@@ -1,0 +1,32 @@
+digraph structs {
+rankdir="LR";        
+node [shape=record,style=filled];
+edge [fontsize=10, penwidth=0.5];
+obj_3210794188136[label="BboxTransformTo",fillcolor=white];
+obj_3210794187968[label="TransformedBbox",fillcolor=white];
+obj_3210794187744[label="Bbox",fillcolor=white];
+obj_3210794183136[label=<<table border="0"><tr><td>0.125</td><td>0.11</td></tr><tr><td>0.9</td><td>0.88</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794187744 -> obj_3210794183136[label="_points",style=solid];
+obj_3210794187968 -> obj_3210794187744[label="_bbox",style=solid];
+obj_3210794186176[label="BboxTransformTo",fillcolor=white];
+obj_3210794186120[label="TransformedBbox",fillcolor=white];
+obj_3210794186008[label="Bbox",fillcolor=white];
+obj_3210793201216[label=<<table border="0"><tr><td>0</td><td>0</td></tr><tr><td>8</td><td>4</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794186008 -> obj_3210793201216[label="_points",style=solid];
+obj_3210794186120 -> obj_3210794186008[label="_bbox",style=solid];
+obj_3210794186064[label="Affine2D",fillcolor=white];
+obj_3210812216064[label=<<table border="0"><tr><td>100</td><td>0</td><td>0</td></tr><tr><td>0</td><td>100</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794186064 -> obj_3210812216064[label="_mtx",style=solid];
+obj_3210794186120 -> obj_3210794186064[label="_transform",style=solid];
+obj_3210812024272[label=<<table border="0"><tr><td>0</td><td>0</td></tr><tr><td>800</td><td>400</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794186120 -> obj_3210812024272[label="_points",style=solid];
+obj_3210794186176 -> obj_3210794186120[label="_boxout",style=solid];
+obj_3210812026592[label=<<table border="0"><tr><td>800</td><td>0</td><td>0</td></tr><tr><td>0</td><td>400</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794186176 -> obj_3210812026592[label="_mtx",style=solid];
+obj_3210794187968 -> obj_3210794186176[label="_transform",style=solid];
+obj_3210812026752[label=<<table border="0"><tr><td>100</td><td>44</td></tr><tr><td>720</td><td>352</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794187968 -> obj_3210812026752[label="_points",style=solid];
+obj_3210794188136 -> obj_3210794187968[label="_boxout",style=solid];
+obj_3210812026512[label=<<table border="0"><tr><td>620</td><td>0</td><td>100</td></tr><tr><td>0</td><td>308</td><td>44</td></tr><tr><td>0</td><td>0</td><td>1</td></tr></table>>,fillcolor=white, fontsize=9];
+obj_3210794188136 -> obj_3210812026512[label="_mtx",style=solid];
+}
